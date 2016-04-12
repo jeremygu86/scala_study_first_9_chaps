@@ -1,0 +1,162 @@
+
+
+scala2. 快学scala 中文版
+
+{第一章}基础[p16]
+Q1:
+var grade: String = "99.99"
+g_double = grade.toDouble
+
+
+Scala: Why is it necessary to assign values to a var/val during declaration
+鼓励使用val声明值和var变量。如果不做初始化会报错
+
+val y: Double = _
+val z: Int = _
+var x: String = null
+
+
+
+Q2:++ -- 没有
+
+var counter: Int = 10
+counter -= 1
+counter += 1
+
+Q3: 调用函数
+import scala.math._ // _通配符，类似java的*
+sqrt(2)
+pow(2,4)
+min(3,Pi)
+
+scala> 10 max 20
+res51: Int = 20
+scala> 10 max 2
+res50: Int = 10
+
+
+Q4: Scala对于不带参数的方法不用带圆括号
+"hello".distinct
+
+第几个字符用apply
+"hello".apply(4)
+
+或者直接用括号
+scala> "hello"(4)
+res40: Char = o
+
+scala> Array(1,2,3)
+res41: Array[Int] = Array(1, 2, 3)
+
+scala> Array(1,2,3)(1)
+res42: Int = 2
+
+
+scala> Array(1,2,3)(0)
+res43: Int = 1
+
+
+Unit type:
+scala> var sss: Unit = ()
+sss: Unit = ()
+
+scala> var xx: Int  = 100
+xx: Int = 100
+
+scala> var ss = xx = 100
+ss: Unit = ()
+
+
+Input
+val name = readLine("Your name: ")
+print("Your age: ")
+val age = readInt()
+printf("Hello, %s! Next year, you will be %d.\n", name, age + 1)
+
+
+
+Loop
+var n: Int = -50
+while (n<0){
+n += 10
+println("good")
+}
+
+val s = "Hello"
+var sum = 0
+// to and untile are different
+
+for (i <- 0 until s.length) // Last value for i is s.length - 1
+sum += s(i)
+
+"e".toCharArray.apply(0).toInt
+// 101
+
+
+for (i <- 1 to 3; j <- 1 to 3) print((10 * i + j) + " ")
+// Prints 11 12 13 21 22 23 31 32 33
+
+for (i <- 1 to 3; j <- 1 to 3 if i != j) print((10 * i + j) + " ")
+// Prints 12 13 21 23 31 32
+
+for (i <- 1 to 3; from = 4 - i; j <- from to 3) print((10 * i + j) + " ")
+// Prints 13 22 23 31 32 33
+
+
+Function
+
+def abs(x:Double) = {
+
+	if (x>0) x else -x
+	
+}
+
+def fac(n:Int) = {
+
+	var f: Int = 1
+	
+	for (i <- 1 to n) f = f*i // i in 1 to n, 1 to 5 is a collection
+	
+	f
+}
+
+// With a recursive function, you must specify the return type. For example,
+def fac2(n: Int): Int = if (n <= 0) 1 else n * fac2(n - 1)
+
+
+fac(5)
+
+
+def sum(args: Int*) = {
+	var result = 0
+	for (arg <- args) result += arg
+	result
+}
+val s = sum(1, 4, 9, 16, 25)
+
+
+1 to 10
+1 to 10:_*
+val s = sum(1 to 5: _*) // Consider 1 to 5 as an argument sequence
+
+def sum_rec(args:Int*): Int = {
+	if (args.length == 0) 0
+	else args.head + sum_rec(args.tail : _*)
+} 
+
+sum_rec(1,2,3,4,5)
+
+sum_rec(1 to 5: _*)
+
+
+
+Because the procedure doesn’t return any value, we omit the = symbol.
+def box(s : String) { // Look carefully: no =
+val border = "-" * s.length + "--\n"
+println(border + "|" + s + "|\n" + border)
+}
+Some people (not me) dislike this concise syntax for procedures and suggest that
+you always use an explicit return type of Unit:
+def box(s : String): Unit = {
+...
+}
