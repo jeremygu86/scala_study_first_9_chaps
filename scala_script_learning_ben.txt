@@ -1,5 +1,3 @@
-
-
 scala2. 快学scala 中文版
 
 {第一章}基础[p16]
@@ -14,8 +12,6 @@ Scala: Why is it necessary to assign values to a var/val during declaration
 val y: Double = _
 val z: Int = _
 var x: String = null
-
-
 
 Q2:++ -- 没有
 

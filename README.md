@@ -1,5 +1,8 @@
 # Scala Study
 
+**Author: Wenxiao Jeremy Gu**
+
+
 ##### Books
 
 scala2Eng.Scala for the Impatient (First 9 chapters)
@@ -20,15 +23,13 @@ scala2Eng.Scala for the Impatient (First 9 chapters)
 
 ##### Setup
 
-- 设置scala SDE（已经解决）
+设置scala SDE（已经解决）
 
 - install java
 
 - install sbt with brew
 
 - https://www.jetbrains.com/help/idea/2016.1/creating-and-running-your-scala-application.html?origin=old_help
-
-- Edit Configuration 需要设置好，还需要继续follow up这部分，看IntelliJ讲scala的视频
 
 ##### IDE Connection
 
@@ -46,3 +47,9 @@ scala2Eng.Scala for the Impatient (First 9 chapters)
 - VCS
 
 ##### Misc.
+
+Data science: Breeze module
+
+- https://github.com/scalanlp/breeze/wiki/Linear-Algebra-Cheat-Sheet
+
+
